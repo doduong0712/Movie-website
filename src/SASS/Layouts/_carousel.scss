@@ -1,0 +1,47 @@
+.carousel {
+  .carousel__item {
+    position: relative;
+    .carousel__img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+      img {
+        width: 100%;
+      }
+    }
+
+    .play_overlay {
+      position: absolute;
+      opacity: 0.6;
+      transition: all 0.3s ease-in-out;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &:hover {
+        opacity: 1;
+      }
+      .edit_play {
+        width: 60px;
+      }
+    }
+  }
+}
+@include RESPONSIVE("992px") {
+  .carousel {
+    .carousel__item {
+      &:hover > .play_overlay {
+        opacity: 0.6;
+      }
+      .play_overlay {
+        opacity: 0;
+        &:hover {
+          opacity: 1;
+        }
+        .edit_play {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

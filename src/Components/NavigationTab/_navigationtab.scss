@@ -1,0 +1,30 @@
+.navigation_tab {
+  justify-content: center;
+  border: none;
+  .nav-item {
+    .nav-link {
+      border: none;
+      @include styleText($color-black-1, $fs-20 + 2);
+      transition: all 0.3s ease-in-out;
+      transform: scale(calc(5 / 6)); // 20px/24px
+      &.active {
+        @include styleText($color-red-primary, $fs-24);
+        transform: scale(1);
+        background-color: transparent;
+      }
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.main {
+  .nav-link {
+    color: $color-white-1 !important;
+    &.active,
+    &:hover {
+      color: $color-red-title !important;
+    }
+  }
+}

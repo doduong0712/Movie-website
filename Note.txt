@@ -1,0 +1,163 @@
+============== Buổi 1 ===============
+    * Component:
+        - Stateful Component (class)
+        - Stateless Component (function)
+        
+============== Buổi 2 ===============
+* Rendering Elements: {}
+* Handling Events: onClick
+* State
+* List keys
+
+============== Buoi 3 ==============
+* Props: Truyền dữ liệu từ Component Cha => Component Con
+    + class: mặc định có this.props
+    + function: phải có tham số props trên function
+* Lifting State Up: Truyền dữ liệu từ Component Con => Component Cha
+* Bài tập giỏ hàng
+    - Sử dụng kiến thức Props: làm thay đổi data cho từng SP
+    - Lifting state up: làm cho nút "Chi tiết" & "Thêm giỏ hàng"
+    - "Add cart/Thêm giỏ hàng". Sản phẩm sẽ được show vào Component Modal
+        + Khi thêm sản phẩm được mua, tạo 1 object để push vào listCart.
+            const objSanPham = {
+                maSP: sanPham.maSP,
+                tenSP: sanPham.tenSP,
+                hinhAnh: sanPham.hinhAnh,
+                donGia: sanPham.giaBan,
+                soLuong: 1
+            };
+            Sau đó từ index.js truyền listCart vào Modal.
+        + Lưu ý, nếu SP được thêm giỏ hàng đã tồn tại trong giỏ hàng thì cập nhật số lượng. Nếu chưa tồn tại trong giỏ hàng thì thêm vào.
+        + Tại Modal.js tạo hàm renderTable duyệt mảng listCart, hiển thị các sản phẩm đã thêm vào giỏ hàng.
+    - Delete từng Sản phẩm trong giỏ hàng: Khi click Delete, truyền SP từ Modal.js ra index.js để xóa.
+    - Tăng/Giảm số lượng SP trong giỏ hàng: Khi click +/- truyền SP từ Modal.js ra index.js để cập nhật số lượng
+        + Lưu ý (-) giảm không được < 1.
+    - Hiển thị tổng số lượng SP trong giỏ hàng tại nút "Giỏ hàng" ở index.js.
+
+============== Buoi 4 ==============
+* Bài tập giỏ hàng (done)
+* User management
+
+============== Buoi 5 ==============
+* Form validation
+* LifeCycle
+
+============== Buoi 6 ==============
+* User management (done)
+* Redux:
+    npm install redux react-redux --save
+
+============== Buoi 7 ==============
+* User management redux (done)
+* Redux:
+    - mapStateToProps: lấy data từ Store xuống component
+    - mapDispatchToProps: bắn/gửi action lên store
+
+=========
+Tạo ra project mới fe42reactrouting: bootstrap, jquery, popper.js, redux, react-redux
+
+
+============== Buoi 8 ==============
+ * Routing (basic)
+    npm install react-router-dom --save
+ * HTTP & Axios
+    npm install axios --save  <=> fetch
+
+
+
+
+--02/03/2021 :Tiếp tục làm phần login trang web
+--07/03/2021 :Làm phần Signup trang web
+--09/03/2021 :Chuyển qua làm phần news
+--10/03/2021 :Bắt đầu làm phần news
+--21/03/2021 :Chuyển qua làm phần theater
+
+--Các includes()phương pháp xác định liệu một chuỗi chứa các ký tự của một chuỗi quy định.
+
+Phương thức này trả về truenếu chuỗi chứa các ký tự và falsenếu không.
+--split Phương thức split () được sử dụng để chia một chuỗi thành một mảng các chuỗi con và trả về mảng mới.
+--Đặt tên class truyền tên từng cụm rạp , Tạo extend từng color tên cụm rạp khi sử dụng chỉ cần gọi 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+============== Buoi 9 ==============
+    * Redux thunk <=> redux saga
+    * Get Params From URL: route, component sử dụng match
+    * Detail Movie
+    * Loading
+
+============== Buoi 10 ==============
+    * HOC
+    * Routing (HomeLayout & AdminLayout)
+    * Đăng nhập Admin
+
+============== Buoi 11 ==============
+    * Auth admin
+    * Thêm Nguoi dung
+    * Hooks
+
+============== Buoi 12 ==============
+    * Hooks (tt)
+    * Material UI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+npm install redux-thunk --save   
+
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
+
+
+
+
+
+

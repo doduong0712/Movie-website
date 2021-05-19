@@ -1,0 +1,41 @@
+@import "./Helper/variables";
+@import "./Helper/mixin";
+@import "./Helper/extend";
+@import "./BASE/reset";
+@import "./BASE/customize";
+
+/* Component */
+@import "./Component/button";
+/**
+* Vendor
+*/
+@import "./Vendor/bootrap";
+/* Component */
+@import "./../Components/Loading/Loading";
+@import "./../Components/SliderSlick/slick";
+@import "./../Components/Interact/Interact";
+@import "../Components/Carousel/carouselPlay";
+@import "../Components/BtnViewMore/BtnViewMore";
+@import "../Components/LogoHeThongRap/LogoHeThong";
+@import "../Components/NavigationTab/navigationtab";
+@import "../Components/NavTabLogo/NavTabLogo";
+@import "../Components/CinemaDetailItem/CinemaDetailItem";
+@import "../Components/LabelContent/LableContent";
+@import "../Components/TheaterList/DetailMovieItem";
+@import "../Components/Carousel/CarouselItem";
+@import "../Components/CirclePoint/CirclePoint";
+@import "../Components/MovieInfo/MovieInfo";
+@import "../Components/SingleShowTimeDetail/SingleShowTimeDetail";
+@import "../Components/DiscussSection/DiscussSection";
+/* Home */
+@import "../containers/Home/DetailPage/MobileMainTitle";
+
+/* Layout */
+@import "./Layouts/header";
+@import "./Layouts/carousel";
+@import "./Layouts/appmobile";
+@import "./Layouts/footer";
+@import "./Layouts/newblock";
+@import "./Layouts/listmovie";
+@import "./Layouts/theater";
+@import "./Layouts/detailpage";

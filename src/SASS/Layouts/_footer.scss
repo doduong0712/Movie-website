@@ -1,0 +1,106 @@
+.footer {
+  background-color: #222;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #949494;
+  .footer_top {
+    text-align: center;
+    .footer_item {
+      .footer_title {
+        display: none;
+        @include styleText($color-white-0, $fs-12);
+      }
+      .footer_link {
+        font-weight: 500;
+        @include styleText($color-light-1, $fs-12 - 1);
+        padding: 5px 5px;
+      }
+      .hidemobile {
+        display: none;
+      }
+
+      .icon_coop_footer {
+        display: none;
+      }
+      .icon_app_footer {
+        display: flex;
+        @include displayFlex(center, center);
+        img {
+          width: 30px;
+          margin-right: 15px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .footer_bottom {
+    text-align: center;
+    .myContainer {
+      border-top: 1px solid $color-white-1;
+      padding-top: $sp-20;
+      .footer_bot_title {
+        @include styleText($color-white-0, $fs-12);
+      }
+      .footer_bot_mid {
+        padding: 10px 0;
+      }
+      .footer_bot_text {
+        display: block;
+        @include styleText($color-light-1, $fs-12);
+        a {
+          color: $color-red-primary;
+          margin-left: 5px;
+        }
+      }
+      .footer_bot_img {
+        width: 100px;
+        margin: 0 auto;
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+@include RESPONSIVE("992px") {
+  .footer {
+    .footer_top {
+      text-align: unset;
+      .footer_item {
+        .footer_title {
+          display: block !important;
+        }
+        .footer_link {
+          display: block !important;
+        }
+        .icon_coop_footer {
+          list-style: none;
+          display: block !important;
+          li {
+            display: flex;
+            .iconCoop {
+              width: 30px;
+              background-color: $color-white-0;
+              border-radius: 50%;
+              margin-right: 15px;
+              cursor: pointer;
+            }
+          }
+        }
+        .icon_app_footer {
+          @include displayFlex(unset, unset);
+        }
+      }
+    }
+    .footer_bottom {
+      text-align: unset;
+      .myContainer {
+        .footer_bot_mid {
+          padding: 0;
+        }
+        .footer_bot_img {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

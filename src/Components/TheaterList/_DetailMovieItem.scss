@@ -1,0 +1,46 @@
+.wrapper__collapse {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  opacity: 1;
+  transition: all 0.5s;
+  @extend %underLinePsuedo;
+  .main__collapse {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s;
+    &::after {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      @include positionAbsolute(50%, false, false, 0);
+      -webkit-font-smoothing: antialiased;
+      transform: translateY(-50%);
+      color: $color-black-2;
+      width: 20px;
+      height: 20px;
+    }
+    &:not(.collapsed) {
+      &::after {
+        // transform: translateY(-50%) rotateX(180deg);
+        content: "\f077";
+      }
+    }
+    .wrapInfo {
+      .showing__age {
+        @extend %showAge;
+      }
+    }
+  }
+  .content_collapse {
+    .digital {
+      @include styleText($color-black-1, $fs-16);
+      font-weight: 500;
+    }
+    .startTime {
+      @include styleText($color-green-primary, $fs-18);
+    }
+  }
+}

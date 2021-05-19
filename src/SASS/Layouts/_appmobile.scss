@@ -1,0 +1,54 @@
+#mobile {
+  background: url("../../images/background.jpg");
+  background-size: contain;
+  padding: $sp-60 0;
+  .app_mobile_left {
+    padding: 0;
+  }
+  .mobile_title {
+    font-weight: 600;
+    @include styleText($color-white-0, $fs-32);
+    margin-bottom: $sp-10;
+  }
+  .mobile_text {
+    display: block;
+    @include styleText($color-white-0, $fs-16);
+    margin: $sp-10 0;
+    a {
+      color: $color-white-0;
+      text-decoration: underline;
+    }
+  }
+  .btnDowloadapp {
+    background-color: $color-red-primary;
+    padding: $sp-10 $sp-20;
+    @include styleText($color-white-0, $fs-18);
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+  }
+  .img-app-right {
+    position: relative;
+    padding: 0;
+    .img_mobile {
+      padding: 0 29%;
+    }
+    .slider-mobile {
+      @include positionAbsolute(0, 0);
+      @include roundElement(100%, 100%, 0);
+      padding: 1.5% 30.3% 0 30.3%;
+      .img-fluid {
+        border-radius: 20px;
+      }
+      .slick-list {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+@include RESPONSIVE("992px") {
+  #mobile {
+    padding: $sp-120 0 $sp-60;
+  }
+}

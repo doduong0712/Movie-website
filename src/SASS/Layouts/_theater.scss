@@ -1,0 +1,46 @@
+$max-height: 545px;
+
+.theaterList {
+  &__img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  &__logos {
+    flex-basis: 92px;
+    max-height: $max-height;
+    border: 1px solid #ebebec;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-y: hidden;
+    overflow-x: auto;
+    @include styleScrollBar(true);
+    transition: all 0.5s;
+  }
+  &__details {
+    flex-basis: 30%;
+    min-width: 30%;
+    width: 100%;
+    max-height: 545px;
+    border: 1px solid #ebebec;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    @include styleScrollBar();
+
+    @include RESPONSIVE("768px") {
+      &:hover {
+        overflow-y: auto;
+      }
+    }
+  }
+  &__movies {
+    flex-grow: 1;
+    max-height: $max-height;
+    width: calc(100% - 92px - 30%);
+    // overflow-x: hidden;
+    // overflow: hidden;
+    overflow-y: auto;
+    @include styleScrollBar();
+  }
+}

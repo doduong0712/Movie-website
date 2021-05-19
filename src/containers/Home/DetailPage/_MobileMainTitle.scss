@@ -1,0 +1,37 @@
+.main {
+  padding: 30px 0;
+  background: #0a2029;
+}
+.mobile-main-title {
+  background-color: $color-dark-2;
+  @include styleText($color-white-1, $fs-14);
+  @include RESPONSIVE("768px") {
+    display: none;
+  }
+}
+
+.main-title-detail {
+  .title {
+    @include styleText($color-white-1, $fs-20);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    .listmovie__age {
+      @extend %showAge;
+      &.green {
+        background: $color-green-primary;
+      }
+    }
+  }
+  p {
+    margin-bottom: 0.25rem;
+    @include RESPONSIVE("768px") {
+      color: $color-white-1;
+    }
+  }
+  .btnBuyTicket {
+    display: inline-flex;
+    max-width: 100px;
+    margin: 1.25rem 0;
+    padding: 0.25rem 0;
+  }
+}

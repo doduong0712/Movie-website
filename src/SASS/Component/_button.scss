@@ -1,0 +1,61 @@
+.btnBuyTicket {
+  display: block;
+  height: 100%;
+  width: 100%;
+  @include displayFlex(center, center);
+  @include styleButton(
+    linear-gradient(to left, #fb4226, #ce3017 100%),
+    $color-red-primary,
+    0,
+    0,
+    $border-radius
+  );
+  @include styleText($color-white-0, $fs-18);
+  &:not(:disabled):hover {
+    background: $color-red-primary;
+    @include styleText($color-white-0, $fs-18);
+  }
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.btnViewMore {
+  @include styleText($color-light-0, $fs-14);
+  @include styleButton(
+    $color-trans,
+    $color-light-0,
+    $sp-half - 0.5,
+    $sp-15,
+    $border-radius
+  );
+  font-weight: 600;
+  text-align: center;
+
+  transition: all 0.2s;
+  margin: 0 3px 20px 3px;
+  &:hover {
+    @include btnHover($color-red-primary, $color-red-primary, $color-white-0);
+  }
+  @include RESPONSIVE("579px") {
+    margin-top: $sp-35;
+  }
+}
+
+.btn-time {
+  display: block;
+  float: left;
+  margin: 0 10px 10px 0;
+  @include styleButton(rgba(246, 246, 246, 0.6), #e4e4e4, false, false, 7px);
+  @include styleText(#9b9b9b, $fs-14);
+  font-weight: 700;
+  min-width: 20%;
+  transition: all 0.5s;
+
+  &:hover {
+    color: #9b9b9b !important;
+  }
+  &:not(:disabled):hover {
+    color: $color-red-primary !important;
+  }
+}

@@ -1,0 +1,20 @@
+.movie__info {
+  padding-top: 48px;
+  background-color: $color-dark-2;
+  @include styleText($color-white-1, $fs-14);
+  .rowInfo {
+    display: flex;
+    margin-bottom: $sp-20;
+    .titleInfor {
+      width: 35%;
+      color: $color-white-0;
+    }
+    .contentInfo {
+      width: 40%;
+    }
+  }
+  .description {
+    width: 100%;
+    text-align: justify;
+  }
+}

@@ -1,0 +1,36 @@
+.myContainer {
+  max-width: 940px;
+  float: none;
+  margin: auto;
+  clear: both;
+}
+.avatar-img {
+  // @include round(....)
+  display: inline-block;
+  margin-right: 10px;
+  @include roundElement(30px, 30px, 50%);
+  // box-sizing: content-box;
+}
+
+.CGV {
+  color: #e71a0f;
+}
+.BHD {
+  color: #8bc541;
+}
+.CNS {
+  color: #df0d7a;
+}
+.GLX {
+  color: #f60;
+}
+.Lotte {
+  color: #ca4137;
+}
+.MegaGS {
+  color: #e5a813;
+}
+
+.stack > * + * {
+  margin-top: $sp-10;
+}
