@@ -31,16 +31,20 @@ const listHeThongRapReducer = (state = initialState, action) => {
       state.error = null;
 
       return { ...state };
+
     case LAY_THONG_TIN_LICH_CHIEU_SUCCESS:
+      state.loading = false;
       state.listHeThongLichChieu = action.data;
 
       return { ...state };
+
     case LIST_HE_THONG_RAP_FAILED:
       state.loading = false;
       state.listHeThongRap = [];
       state.error = action.error;
 
       return { ...state };
+
     case LAY_THONG_TIN_LICH_CHIEU_FAILED:
       state.loading = false;
       state.listHeThongLichChieu = [];

@@ -1,6 +1,11 @@
 @import "./Helper/variables";
 @import "./Helper/mixin";
 @import "./Helper/extend";
+
+/**
+* Base
+*/
+
 @import "./BASE/reset";
 @import "./BASE/customize";
 
@@ -27,8 +32,18 @@
 @import "../Components/MovieInfo/MovieInfo";
 @import "../Components/SingleShowTimeDetail/SingleShowTimeDetail";
 @import "../Components/DiscussSection/DiscussSection";
+@import "../Components/ModalReview/ModalReview";
+@import "../Components/BookingTheater/BookingTheater";
+@import "../Components/TimeWaiting/TimeWaiting";
+@import "../Components/SeatRow/SeatRow";
+@import "../Components/NoteSeat/NoteSeat";
+@import "../Components/PaySection/Pay";
+@import "../Components/ComboBox/comboBox";
 /* Home */
 @import "../containers/Home/DetailPage/MobileMainTitle";
+@import "../containers/Home/BookingPage/BookingPage";
+@import "../containers/Home/BookingPage/BookingProgress/BookingProgress";
+@import "../containers/Home/BookingPage/ConfirmStep/ConfirmStep";
 
 /* Layout */
 @import "./Layouts/header";

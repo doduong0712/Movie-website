@@ -1,9 +1,10 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-
+import BtnViewMore from "../BtnViewMore";
 import DiscussHeader from "./DiscussHeader";
 import DiscussGroup from "./DiscussGroup";
+import ModalReview from "../ModalReview";
 
 import { FAKE_IMG_USER } from "../../constants/config";
 import { TogglePostProvider } from "../../context/TogglePostContext";
@@ -33,6 +34,9 @@ function DiscussSection() {
         <div className="discuss__area clearfix">
           <TogglePostProvider initialPosts={reviews} postSize={5}>
             <DiscussGroup />
+
+            <BtnViewMore />
+            <ModalReview />
           </TogglePostProvider>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { prefixHttp } from "../../utils/movie";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import LinkButton from "../LinkButton";
 
 //Return startTime ~ endTime depend on API string(ex: 2019-01-01T10:10:00)
 const styleTime = (ngayChieuGioChieu) => {
@@ -33,7 +33,7 @@ const checkPassStartTime = (startTime) => {
   if (startTime > currentTime) {
     return false;
   }
-  return false;
+  return true;
 };
 
 const renderBtnTime = (listTime = []) => {
@@ -42,14 +42,14 @@ const renderBtnTime = (listTime = []) => {
       const [startTime, endTime] = styleTime(item.ngayChieuGioChieu);
 
       return (
-        <Link
-          to="#!"
+        <LinkButton
+          to={`/booking/${item.maLichChieu}`}
           key={item.maLichChieu}
           className="btn btn-time"
           disabled={checkPassStartTime(startTime)}
         >
           <span className="startTime">{startTime}</span> ~ {endTime}
-        </Link>
+        </LinkButton>
       );
     });
   }

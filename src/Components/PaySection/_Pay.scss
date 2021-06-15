@@ -1,0 +1,164 @@
+#pay-section {
+  background: $color-white-0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 98;
+  position: relative;
+
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+
+  @include RESPONSIVE("768px") {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .pay-wrapper {
+    // @include positionAbsolute(0,0);
+    // position: relative;
+
+    // width: 100%;
+    height: 100%;
+    padding: 0 $sp-10 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // height: 100vh;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .pay__item--wrapper {
+    padding: $sp-20 0;
+    border-bottom: 1px dashed #ccc;
+    min-height: 40px;
+    // @include displayFlex(space-between, center);
+    .row [class*="col-"] {
+      padding: 0;
+    }
+    &.combo-click {
+      cursor: pointer;
+    }
+  }
+  .total {
+    @include styleText($color-choosing, $fs-32);
+    text-align: center;
+    height: 40px;
+    span {
+      display: inline-block;
+      line-height: 40px;
+      font-weight: 700;
+    }
+  }
+  .seatchosen {
+    .myseat {
+      @include styleText($color-red-primary, $fs-14);
+      //word-break: break-all;
+
+      .text {
+        line-height: 35px;
+        margin-left: 5px;
+      }
+      .img-popcorn {
+        width: 35px;
+      }
+    }
+    .demoMoney {
+      @include styleText($color-choosing, $fs-16);
+    }
+  }
+  // .formsection {
+  //   position: relative;
+  //   height: 40px;
+  //   input[type="text"] {
+  //     width: 100%;
+  //     height: 100%;
+  //     padding-top: 20px;
+  //     border: none;
+  //     outline: none;
+  //     &:focus,
+  //     &:valid {
+  //       & + label .label-name {
+  //         transform: translateY(-150%);
+  //         @include styleText(#4a90e2, $fs-14);
+  //       }
+  //     }
+  //   }
+  //   label {
+  //     @include styleText($color-light-1, $fs-18);
+  //     // display: block;
+  //     width: 100%;
+  //     height: 100%;
+  //     margin-bottom: 0;
+  //     @include positionAbsolute(0, 0);
+  //     pointer-events: none;
+  //     .label-name {
+  //       @include positionAbsolute(false, 0, 5px, false);
+  //       transition: all.3s;
+  //     }
+  //   }
+  //   #tbemail {
+  //     @include styleText($color-red-primary, $fs-12);
+  //     display: none;
+  //   }
+  //   #tbphone {
+  //     display: none;
+  //   }
+  // }
+  .howtopay {
+    .radio-selection {
+      .radio__item {
+        margin-bottom: $sp-10;
+        cursor: pointer;
+        @include displayFlex(flex-start, center);
+      }
+      .radio__item--input[type="radio"] {
+        cursor: pointer;
+        background-color: $color-white-0;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #4a90e2;
+        border-radius: 50%;
+        outline: 0;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          @include positionAbsolute(50%, 50%);
+          transform: translate(-50%, -50%);
+          width: 50%;
+          height: 50%;
+          border-radius: 50%;
+        }
+
+        &:checked::before {
+          background: #4a90e2;
+        }
+      }
+      .radio__item--label {
+        flex: 1;
+        cursor: pointer;
+        @include displayFlex(flex-start, center);
+        margin: 0;
+
+        .pay__figure {
+          width: 40px;
+          height: 40px;
+          margin: 0 $sp-10;
+        }
+
+        .pay__text {
+          @include styleText($color-black-1, $fs-14);
+          margin: 0;
+        }
+      }
+    }
+  }
+  .confirm__group {
+    @include positionAbsolute(false, 0, 0);
+    width: 100%;
+    //.confirm__item
+  }
+}

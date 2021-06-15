@@ -19,6 +19,7 @@ import CirclePoint from "../../../Components/CirclePoint";
 import { actFetchListHeThongRap } from "../../../Components/TheaterList/modules/action";
 import { actGetReviews } from "../../../Components/DiscussSection/modules/action";
 import { actFetchDetailMovie } from "./modules/action";
+import useTitle from "../../../Hook/useTitle";
 
 const MainTitleDesktopStyle = DetailMovieStyle(MainTitleDesktop, "detailMovie");
 
@@ -43,6 +44,7 @@ function DetailPage(props) {
     loadingDetaiMovie,
   } = props;
 
+  useTitle("Chi tiết");
   useEffect(() => {
     const slug = props.match.params.slug; //1132-ted-part-2
     const maPhim = slug.slice(0, slug.indexOf("-"));

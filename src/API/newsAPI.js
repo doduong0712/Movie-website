@@ -28,6 +28,11 @@ const newsAPI = {
     const uri = "/discuss";
     return instance.get(uri);
   },
+
+  postDiscuss: (newPost) => {
+    const uri = "/discuss";
+    return instance.post(uri, newPost);
+  },
 };
 
 export default newsAPI;

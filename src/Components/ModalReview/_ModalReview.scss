@@ -1,0 +1,102 @@
+body.modal {
+  padding-right: 0 !important;
+}
+
+#reviewInput {
+  .modal-header {
+    border-bottom: none;
+  }
+  .rating {
+    float: left;
+    width: 55%;
+    &::after {
+      @extend %clearFix;
+    }
+    @include RESPONSIVE("579px") {
+      width: unset;
+    }
+  }
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+
+  .rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 0.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+  }
+
+  .rating:not(:checked) > input {
+    position: absolute;
+    top: -999px;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .rating:not(:checked) > label:before {
+    content: "★";
+  }
+  .rating > input:checked ~ label {
+    color: $color-red-primary;
+  }
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: rgba(220, 53, 69, 0.75);
+  }
+
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: $color-red-primary;
+    text-shadow: 0.1em 0.1em 0.2em $color-red-primary;
+  }
+  /* .rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px; 
+  } */
+  .star-point {
+    font-size: clamp(1rem, 3vw, 21px);
+  }
+  .modal-body {
+    .btn-sendreview {
+      border-radius: 6px;
+      height: 42px;
+      font-size: $fs-24;
+      line-height: 26px;
+      background-color: #00334d;
+      color: rgba(220, 220, 220, 1);
+      font-family: Klavika-Bold;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .input-comment {
+      appearance: none;
+      padding: 20px;
+      border-radius: 8px;
+      width: 100%;
+      background-color: $color-white-0;
+      resize: none;
+      @include styleText($color-black-0, $fs-16);
+
+      &:focus {
+        outline: none;
+        border: 1px solid black;
+      }
+    }
+
+    .text-alert {
+      color: $color-red-primary;
+      font-weight: 600;
+    }
+  }
+}

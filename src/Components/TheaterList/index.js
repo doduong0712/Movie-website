@@ -22,7 +22,6 @@ const setTimeClick = () => {
       .forEach((tab) => {
         if (tab.classList.contains("active")) {
           tab.firstElementChild.firstElementChild.click();
-          console.log(tab.firstElementChild.firstElementChild);
         }
       });
   }, 250);

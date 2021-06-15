@@ -3,7 +3,11 @@ import {
   GET_REVIEWS_REQUEST,
   GET_REVIEWS_SUCCESS,
   GET_REVIEWS_FAILED,
+  POST_REVIEWS_REQUEST,
+  POST_REVIEWS_SUCCESS,
+  POST_REVIEWS_FAILED,
 } from "./constant";
+import { FAKE_IMG_USER } from "../../../constants/config";
 
 const initialState = {
   loading: false,
@@ -16,7 +20,7 @@ const initialState = {
 };
 
 const reviewsReducer = (state = initialState, action) => {
-  const { type, data, err } = action;
+  const { type, data, err, newPost } = action;
   switch (type) {
     case GET_REVIEWS_REQUEST:
       return {
@@ -42,6 +46,22 @@ const reviewsReducer = (state = initialState, action) => {
         post: [],
         err,
       };
+
+    case POST_REVIEWS_REQUEST:
+      return { ...state };
+
+    case POST_REVIEWS_SUCCESS:
+      newPost.avatar = FAKE_IMG_USER;
+      return {
+        ...state,
+        post: [...state.post, newPost],
+        people: state.people + 1,
+
+        totalPoint: parseInt(state.totalPoint) + parseInt(newPost.point),
+      };
+
+    case POST_REVIEWS_FAILED:
+      return { ...state };
     default:
       return { ...state };
   }

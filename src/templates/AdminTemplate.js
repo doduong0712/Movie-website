@@ -14,15 +14,15 @@ export default function AdminTemplate({ Component, ...props }) {
   return (
     <Route
       {...props}
-      render={propsComponent => {
-        if (localStorage.getItem("userAdmin")) {
-          return (
-            <AdminLayout>
-              <Component {...propsComponent} />
-            </AdminLayout>
-          );
-        }
-        return <Redirect to="/auth" />;
+      render={(propsComponent) => {
+        //if (localStorage.getItem("userAdmin")) {
+        return (
+          <AdminLayout>
+            <Component {...propsComponent} />
+          </AdminLayout>
+        );
+        //}
+        //return <Redirect to="/auth" />;
       }}
     />
   );

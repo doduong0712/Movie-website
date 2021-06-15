@@ -12,7 +12,6 @@ import theatersAPI from "../../../API/theatersAPI";
 const actFetchListHeThongRap = () => {
   return async (dispatch) => {
     dispatch(actListHeThongRapRequest());
-
     try {
       const resData = await theatersAPI.getThongTinHeThongRap();
       dispatch(actListHeThongRapSucces(resData));

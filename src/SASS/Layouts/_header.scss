@@ -183,7 +183,7 @@
 @include RESPONSIVE("768px") {
   #header {
     .header__mid {
-      margin: 0;
+      margin: 0 auto;
       margin-right: auto;
       @include displayFlex(center, center);
 

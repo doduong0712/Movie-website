@@ -144,13 +144,13 @@
       @include styleText($color-white-0, $fs-14);
       font-weight: 600;
     }
-    .star {
-      display: flex;
-      @include displayFlex(center, center);
-      img {
-        max-width: 8px;
-      }
-    }
+  }
+}
+.star {
+  display: flex;
+  @include displayFlex(center, center);
+  img {
+    max-width: 8px;
   }
 }
 

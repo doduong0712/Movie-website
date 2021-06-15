@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import CinemaDetailItem from "../CinemaDetailItem";
-import { Link } from "react-router-dom";
+import LinkButton from "../LinkButton";
 
 const styleTime = (ngayChieuGioChieu) => {
   let d = new Date(ngayChieuGioChieu);
@@ -21,14 +21,32 @@ const styleTime = (ngayChieuGioChieu) => {
   return [startTime, endTime];
 };
 
+const chechPassStartTime = (startTime) => {
+  let d = new Date();
+  let currentTime = d.toLocaleTimeString("it-IT", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  if (startTime > currentTime) {
+    return false;
+  }
+  return true;
+};
+
 const renderBtnTime = (listTimes = []) => {
   if (listTimes && listTimes.length > 0) {
     return listTimes.map((item, intex) => {
       const [startTime, endTime] = styleTime(item.ngayChieuGioChieu);
       return (
-        <Link to="#!" className="btn btn-time">
+        <LinkButton
+          key={item.maLichChieu}
+          to={`/booking/${item.maLichChieu}`}
+          className="btn btn-time"
+          disabled={chechPassStartTime(startTime)}
+        >
           <span className="startTime">{startTime}</span> ~ {endTime}
-        </Link>
+        </LinkButton>
       );
     });
   }

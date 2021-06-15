@@ -17,7 +17,7 @@ function Logged(props) {
   return (
     <>
       <li className="nav-item nav-item--login">
-        <span>
+        <span className="nav-link">
           <img className="avatar-img" src={FAKE_IMG_USER} alt="avatar" />
           {hoTen}
         </span>

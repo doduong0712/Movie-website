@@ -42,22 +42,22 @@ function MainNav(props) {
     >
       {isLoggedIn ? <Logged hoTen={hoTen} /> : <UnLogged />}
       <li className="nav-item hideOnDesk">
-        <Link className="nav-link" to="">
+        <Link className="nav-link" to="/#lichchieu" href="lichchieu">
           Lịch Chiếu
         </Link>
       </li>
       <li className="nav-item hideOnDesk">
-        <Link className="nav-link" to="">
+        <Link className="nav-link" to="/#theaterList">
           Cụm Rạp
         </Link>
       </li>
       <li className="nav-item hideOnDesk">
-        <Link className="nav-link" to="">
+        <Link className="nav-link" to="/#tintuc">
           Tin Tức
         </Link>
       </li>
       <li className="nav-item hideOnDesk">
-        <Link className="nav-link" to="">
+        <Link className="nav-link" to="/#mobile">
           Ứng dụng
         </Link>
       </li>

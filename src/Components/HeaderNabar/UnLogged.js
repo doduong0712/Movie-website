@@ -1,12 +1,17 @@
 import React, { memo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import avatar from "../../images/avatar.png";
 
 function UnLogged() {
+  const location = useLocation();
+
   return (
     <>
       <li className="nav-item nav-item--login">
-        <Link to={{ pathname: "/login" }} className="nav-link">
+        <Link
+          to={{ pathname: "/login", state: { from: location } }}
+          className="nav-link"
+        >
           <img className="avatar-img" src={avatar} alt="avatar" />
           Đăng Nhập
         </Link>

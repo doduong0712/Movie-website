@@ -8,7 +8,46 @@ import usersApi from "../../../../API/usersApi";
 import { USER_KEY } from "../../../../constants/config";
 import Swal from "sweetalert2";
 
+const actLogout = (e) => {
+  return (dispatch) => {
+    Swal.fire({
+      title: "Bạn có chắc muốn đăng xuất?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Đăng Xuât",
+      cancelButtonText: "Hủy",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Đã Đăng Xuất", "Cám ơn bạn đã sử dụng Tix.", "success");
+        dispatch({ type: LOG_OUT });
+      } else {
+        e.preventDefault();
+      }
+    });
+  };
+};
+
+const findPrevPathname = (history = {}) => {
+  if (history.location?.state?.from) {
+    //console.log(history.location.state.from.pathname);
+    return history.location.state.from.pathname;
+  }
+  return "/";
+};
+
+// resData = {
+//   "taiKhoan": "dpnguyen",
+//   "hoTen": "Nguyen",
+//   "email": "dpnguyen@gmail.com",
+//   "soDT": "0938564278",
+//   "maNhom": "GP01",
+//   "maLoaiNguoiDung": "QuanTri",
+//   "accessToken": "eyJhbG...."
+// }
+
 const actFetchUserLogin = (user, history) => {
+  //console.log(history);
+
   return async (dispatch) => {
     dispatch(actLoginRequest());
     try {
@@ -26,37 +65,6 @@ const actFetchUserLogin = (user, history) => {
     } catch (error) {
       dispatch(actLoginFailed(error));
     }
-  };
-};
-
-/* const actLogout = () => {
-
-} */
-
-const findPrevPathname = (history = {}) => {
-  if (history.location?.state?.from) {
-    //console.log(history.location.state.from.pathname);
-    return history.location.state.from.pathname;
-  }
-  return "/";
-};
-
-const actLogout = (e) => {
-  return (dispatch) => {
-    Swal.fire({
-      title: "Bạn có chắc muốn đăng xuất?",
-      icon: "question",
-      showCancelButton: true,
-      confirmButtonText: "Đăng Xuât",
-      cancelButtonText: "Hủy",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("Đã Đăng Xuất", "Cám ơn bạn đã sử dụng Tix.", "success");
-        dispatch({ type: LOG_OUT });
-      } else {
-        e.preventDefault();
-      }
-    });
   };
 };
 
@@ -79,5 +87,9 @@ const actLoginFailed = (error) => {
     error,
   };
 };
+
+/* const actLogout = () => {
+
+} */
 
 export { actFetchUserLogin, actLogout };

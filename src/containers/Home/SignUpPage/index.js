@@ -20,6 +20,7 @@ import useFormValidation from "../../../Hook/useFormValidation";
 import validateForm from "../../../Hook/validateForm";
 
 import { Link } from "react-router-dom";
+import useTitle from "../../../Hook/useTitle";
 
 const logo = require("../../../images/logo.png");
 const INIT_SIGNUP_STATE = {
@@ -37,6 +38,7 @@ function SignUp(props) {
   //console.log(errorSignUp);
 
   const classes = useUserStyle();
+  useTitle("Đăng Ký");
   useSetBackground();
 
   const {

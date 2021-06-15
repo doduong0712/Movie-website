@@ -17,11 +17,13 @@ const listMovieReducer = (state = initialState, action) => {
       state.listMovie = [];
       state.error = null;
       return { ...state };
+
     case LIST_MOVIE_SUCCESS:
       state.loading = false;
       state.listMovie = action.data;
       state.error = null;
       return { ...state };
+
     case LIST_MOVIE_FAILED:
       state.loading = false;
       state.listMovie = [];

@@ -23,8 +23,17 @@
       @include styleText($color-black-1, clamp(13px, 2.5vw, 16px));
       margin: 0;
     }
+    .time__post {
+      margin: 0;
+      @include styleText($color-black-0, clamp(12px, 2.5vw, 14px));
+    }
 
     .start__group {
+      &--comment {
+        width: max-content;
+        margin-left: auto;
+        text-align: center;
+      }
       .start {
         @include displayFlex(flex-end, center);
       }
@@ -34,6 +43,18 @@
           font-size: clamp(15px, 3vw, 21px);
         }
       }
+    }
+
+    &--body {
+      padding: $sp-rem 0;
+      margin-top: 10px;
+    }
+
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: $color-light-0;
+      margin: 10px 0;
     }
   }
 }
