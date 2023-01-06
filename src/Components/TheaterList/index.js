@@ -13,6 +13,8 @@ const setTimeClick = () => {
   document
     .querySelectorAll(".theaterList__details .tab-pane .logo__wrapper")
     .forEach((link) => {
+      //console.log(link);
+
       link.classList.remove("active");
     });
   // async sau click vao link (se tu them class active da xoa vao phan tu dau tien cua pane co class active (do lick vao tam hinh))
@@ -20,7 +22,10 @@ const setTimeClick = () => {
     document
       .querySelectorAll(".theaterList__details .tab-pane")
       .forEach((tab) => {
+        //console.log(tab);
+
         if (tab.classList.contains("active")) {
+          //The contains() trả về một giá trị Boolean cho biết liệu một nút có phải là con của một nút được chỉ định hay không.
           tab.firstElementChild.firstElementChild.click();
         }
       });
@@ -42,6 +47,7 @@ function TheaterList(props) {
     const imgs = document.querySelectorAll(
       ".theaterList__logos .logo__wrapper"
     );
+    //console.log(imgs);
 
     imgs.forEach((img) => {
       img.addEventListener("click", () => {

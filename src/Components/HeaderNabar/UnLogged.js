@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import avatar from "../../images/avatar.png";
 
 function UnLogged() {
-  const location = useLocation();
+  const location = useLocation(); //Lấy được truy cập , từ các from khác
 
   return (
     <>

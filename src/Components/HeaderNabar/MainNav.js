@@ -21,6 +21,7 @@ function MainNav(props) {
       const user = localStorage.getItem(USER_KEY);
       const hoTen = JSON.parse(user).hoTen;
       setHoTen(hoTen);
+      console.log(user);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 //import Loading from "../../../Components/Loading";
 import Carousel from "../../../Components/Carousel";
+import Search from "../../../Components/Search";
 import AppMobile from "../../../Components/AppMobile";
 import ListMovie from "../../../Components/ListMovie";
 import News from "../../../Components/News";
@@ -15,6 +16,7 @@ import {
   actFetchListHeThongRap,
   actFetchThongTinLichChieu,
 } from "../../../Components/TheaterList/modules/action";
+import useMedia from "../../../Hook/useMedia";
 
 function HomePage(props) {
   const {
@@ -26,6 +28,7 @@ function HomePage(props) {
   } = props;
 
   useTitle("Trang chủ");
+  const isDesktop = useMedia("(min-width:992px)");
   useEffect(() => {
     fetchListMovie();
     fetchListHeThongRap();
@@ -38,6 +41,7 @@ function HomePage(props) {
   return (
     <div>
       <Carousel />
+      {isDesktop && <Search />}
 
       <ListMovie />
 

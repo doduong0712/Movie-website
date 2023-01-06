@@ -30,7 +30,7 @@ function useFormValidation(
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errors]);
+  }, [values]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,6 +73,7 @@ function useFormValidation(
         ...errors,
         [key]: errorMessages,
       });
+      console.log(errors);
     }
 
     if (isNotValid) {

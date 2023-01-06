@@ -9,14 +9,12 @@ const initialState = {
 };
 
 function Auth(props) {
-  const { fetchAdminLogin } = props;
+  const { fetchAdminLogin, error, loading } = props;
 
   const [value, setValue] = useState(initialState);
 
   const handleOnChange = (e) => {
-    setValue({
-      [e.target.name]: e.target.value,
-    });
+    setValue({ ...value, [e.target.name]: e.target.value });
   };
 
   const handleLogin = (e) => {
@@ -25,19 +23,51 @@ function Auth(props) {
       taikhoan: value.username,
       matKhau: value.password,
     };
+
     fetchAdminLogin(user, props.history);
   };
 
   const renderNoti = () => {
-    const errorUser = props;
-    if (errorUser) {
-      return (
-        <div className="alert alert-danger"> {errorUser.response.data}</div>
-      );
+    if (error) {
+      return <div className="alert alert-danger"> {error.response.data}</div>;
     }
   };
 
-  return <div>auth</div>;
+  if (loading) return <Loading />;
+  return (
+    <div className="container">
+      <div className="row mt-5">
+        <div className="col-sm-6 mx-auto">
+          <form onSubmit={handleLogin}>
+            <div className="form-group">
+              <label>Username</label>
+              <input
+                onChange={handleOnChange}
+                name="username"
+                type="text"
+                className="form-control"
+                value={value.username}
+              />
+              <div className="form-group">
+                <label>Password</label>
+                <input
+                  onChange={handleOnChange}
+                  name="password"
+                  type="password"
+                  className="form-control"
+                  value={value.password}
+                />
+              </div>
+              {renderNoti()}
+              <button type="submit" className="btn btn-success">
+                Đăng nhập
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {
